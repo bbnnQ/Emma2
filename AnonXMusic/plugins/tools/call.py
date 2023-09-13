@@ -3,9 +3,7 @@ from pyrogram import Client, filters
 from strings import get_command
 from strings.filters import command
 from pyrogram.types import Message, VoiceChatStarted, VoiceChatEnded
-from AnonX import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
-from AnonX.core.call import Anon
-from AnonX.utils.database import get_assistant
+from AnonXMusic import app
 
 @app.on_message(filters.voice_chat_started)
 async def stcall(client: Client, message: Message): 
