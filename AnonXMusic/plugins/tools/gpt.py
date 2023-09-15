@@ -34,6 +34,7 @@ def gpt(text) -> str:
         return None
 
 @app.on_message(command("ايما") & filters.private)
+@app.on_message(command("بروفيسور") & filters.group)
 def reply_gpt(client, message:Message):
     text = message.text.split("ايما")[1]
     reply_text = gpt(text)
