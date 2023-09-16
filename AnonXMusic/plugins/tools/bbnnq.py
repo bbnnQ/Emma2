@@ -79,6 +79,20 @@ async def ihd(client: Client, message: Message):
             ]
         )
     )
+@app.on_message(command([f"بيغ سام"]))
+async def ihd(client: Client, message: Message):
+    rl = random.randint(123,152)
+    url = f"https://t.me/EmmaBotVoice/{rl}"
+    await client.send_voice(message.chat.id,url,caption=f"🧚🏼‍♂️ ¦ تم أختياࢪ أغنية لك {message.from_user.mention}",
+    reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        message.from_user.first_name, url=f"https://t.me/{message.from_user.username}")
+                ],
+            ]
+        )
+    )
 
 @app.on_message(command("الاوامر"))
 async def ahmad(client: Client, message: Message):
