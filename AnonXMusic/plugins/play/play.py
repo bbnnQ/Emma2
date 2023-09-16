@@ -4,7 +4,7 @@ from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, InputMediaPhoto, Message
 from pytgcalls.exceptions import NoActiveGroupCall
 
-import config
+import config import BOT_TOKEN
 from strings.filters import command
 from AnonXMusic import Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app
 from AnonXMusic.core.call import Anony
@@ -37,6 +37,10 @@ from config import BANNED_USERS, lyrical
     & filters.group
     & ~BANNED_USERS
 )
+await message.delete()
+    do = requests.get(f"https://api.telegram.org/bot{BOT_TOKEN}/getChatMember?chat_id=@cczza&user_id={message.from_user.id}").text
+    if do.count("left") or do.count("Bad Request: user not found"):
+        await message.reply_text(f" ** ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉**\n@cczza\n» **اشتࢪك بقناة البوت لتستطيع تشغيل الموسيقى**")
 @PlayWrapper
 async def play_commnd(
     client,
