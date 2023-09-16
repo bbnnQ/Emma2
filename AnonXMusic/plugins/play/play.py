@@ -38,10 +38,6 @@ from config import BANNED_USERS, lyrical
     & filters.group
     & ~BANNED_USERS
 )
-await message.delete()
-    do = requests.get(f"https://api.telegram.org/bot{BOT_TOKEN}/getChatMember?chat_id=@cczza&user_id={message.from_user.id}").text
-    if do.count("left") or do.count("Bad Request: user not found"):
-        await message.reply_text(f" ** ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉**\n@cczza\n» **اشتࢪك بقناة البوت لتستطيع تشغيل الموسيقى**")
 @PlayWrapper
 async def play_commnd(
     client,
@@ -54,6 +50,10 @@ async def play_commnd(
     url,
     fplay,
 ):
+   await message.delete()
+    do = requests.get(f"https://api.telegram.org/bot{BOT_TOKEN}/getChatMember?chat_id=@cczza&user_id={message.from_user.id}").text
+    if do.count("left") or do.count("Bad Request: user not found"):
+        await message.reply_text(f" ** ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉**\n@cczza\n» **اشتࢪك بقناة البوت لتستطيع تشغيل الموسيقى**") 
     mystic = await message.reply_text(
         _["play_2"].format(channel) if channel else _["play_1"]
     )
