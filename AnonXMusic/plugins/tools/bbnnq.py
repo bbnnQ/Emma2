@@ -95,7 +95,7 @@ async def ihd(client: Client, message: Message):
     )
 @app.on_message(command([f"الشامي"]))
 async def ihd(client: Client, message: Message):
-    rl = random.randint(154,169)
+    rl = random.randint(196,210)
     url = f"https://t.me/EmmaBotVoice/{rl}"
     await client.send_voice(message.chat.id,url,caption=f"🧚🏼‍♂️ ¦ تم أختياࢪ أغنية لك {message.from_user.mention}",
     reply_markup=InlineKeyboardMarkup(
@@ -132,7 +132,7 @@ async def ahmad(client: Client, message: Message):
     )
 @app.on_message(command(["المطور","المبرمج","السورس"]))
 async def ahmad(client: Client, message: Message):
-    await message.reply_text(f"- 𝐖ᴇʟᴄᴏᴍᴇ 𝐓ᴏ 𝐒ᴏụʀᴄᴇ 𝐄ᴍᴍᴀ 🥀\n- 𝐒ᴏụʀᴄᴇ 𝐃ᴇᴠᴇʟᴏᴘᴇʀ: @bbnnQ 🧑‍💻",
+    await message.reply_text(f"- 𝐖ᴇʟᴄᴏᴍᴇ 𝐓ᴏ 𝐒ᴏụʀᴄᴇ 𝐄ᴍᴍᴀ 🥀\n- 𝐒ᴏụʀᴄᴇ 𝐃ᴇᴠᴇʟᴏᴘᴇʀ: @bbnnQ. ",
         reply_markup=InlineKeyboardMarkup(
         [
             [
