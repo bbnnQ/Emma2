@@ -95,7 +95,7 @@ async def ihd(client: Client, message: Message):
     )
 @app.on_message(command([f"الشامي"]))
 async def ihd(client: Client, message: Message):
-    rl = random.randint(153,169)
+    rl = random.randint(154,169)
     url = f"https://t.me/EmmaBotVoice/{rl}"
     await client.send_voice(message.chat.id,url,caption=f"🧚🏼‍♂️ ¦ تم أختياࢪ أغنية لك {message.from_user.mention}",
     reply_markup=InlineKeyboardMarkup(
